@@ -1,0 +1,138 @@
+﻿############Performance Testing:###########
+
+Performance Testing:
+		To test an s/w appln by applying load whether it can withstand under any circumstances.
+Load Test:
+	To measure the performance under expected load.
+Stress Test: 
+	To measure the performance under high expected load.
+Spike Test:
+	By sudden increase in load.
+Endurance Test:
+	To check the system for expected load for long duration.
+Volume Test: 
+	To measure performance with high volume of data.
+Soak Test:
+continues usage of appln 
+EX:mobile,T.V
+
+
+	#####CONTROLLERS#####
+            -------------
+
+ Controllers:
+	It is container where we add req.
+Logic controller:
+	This is used to decide "which and how" a req is to be send.
+Loop controller:
+	This is used "when user want to run a particular req for many times out of several reqs.
+Simple ctrl:
+	This has multiple users/This controller is just a placeholder for grouping and ordering the different elements of the test plan.
+
+
+Module ctrl:
+	A Req can be runned for multiple times 
+                        (or)
+         we can reuse a test fragment(e.g. a sampler) into our script again by selecting the module from the Module Controller’s control panel.
+	EX: Login module is used for several times login-->registration 
+						   login-->Product booking
+						   login-->logout
+Interleave ctrl:
+	To run in sequentail order
+        EX:login-->registration-->product booking-->logout
+
+Random ctrl:
+	This will take random reqs.
+EX:flight booking
+ User login
+ Admin login         }  Random req can execute either user login or Admin login
+ Registration
+Flight booking.
+			
+Run ctrl:
+	For a given time period,how many iterations does a req do
+If ctrl:
+    	This ctrl is executed only when the condition is only true.
+While ctrl:
+	This ctrl will execute untill the condition is false.
+Transaction ctrl:
+	This ctrller is used to group sample reqs into one 
+Include ctrl:
+	By using this ctrller,we can add an external .jmx file.
+Recording ctrl:
+	This ctrl acts as placeholder where the recording is done using HTTP proxy(Placeholder:-->A person occupies the place of anoter person)
+
+Switch ctrl:
+	This ctrl is used to pick any one req for processing from multiple req's based on index position.
+
+
+Throughput ctrl:
+	It is used to ctrl the processing of its child elements in terms of total number of execution (or) % of execuion
+mentioned in its ctrl panel.
+
+
+		####TIMERS####
+		-----------------
+Timers:
+   If we apply load/stress performance without giving delay.The appln may be overloaded and doesnot provide perfect results
+Constant Timer:
+	All the users will wait at a constant time period a/c to the value you provided(ms)
+Uniform Random Timer:
+	Samplers wait for a specific time interval for a given values.It should have Constant Time + Random Delay
+Gaussain Random Timer:
+	 To pause the execution
+Synchronization Timer:
+	To hold threads untill x- no .of threads arrives and then all are released at a time."This timer will create heavy load on application.
+
+
+          ######ThreadGroup#####
+To put load on an appln
+Setup ThreadGroup:
+	Before execution that means intilization(creating users)
+Teardown ThreadGroup:
+	After execution that means deletion
+        ########
+
+Latency:
+	Time spent on network
+Importance: User will use the appln from different locations.so latency is used.
+ResponseTime:
+	latency+processing time
+Importance:It is the time taken by the server to process the Req and send respose.Due to low response time the users will be unhappy.so response time is neccessary.
+
+Bandwidth:
+	The max amount of data that can be transferred per unit of time through the comm'n channel.
+Throughtput:
+	The no.of transactions performed ina second within a given time period.
+Correlation:
+	To handle dynamic values
+Parameterization:
+	Passing test data from external files to script.
+
+Regular Expression:
+	Sequence of symblos&characters which expresses a string to be searched for within a longer piece of text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
